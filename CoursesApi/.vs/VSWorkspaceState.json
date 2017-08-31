@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Api",
+    "\\Api\\Controllers",
+    "\\Models",
+    "\\Models\\DTOModels",
+    "\\Models\\EntityModels",
+    "\\Repositories",
+    "\\Services"
+  ],
+  "SelectedNode": "\\Repositories\\CoursesRepository.cs",
+  "PreviewInSolutionExplorer": false
+}
