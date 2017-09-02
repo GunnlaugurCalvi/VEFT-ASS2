@@ -32,7 +32,7 @@ namespace Api
             services.AddTransient<IStudentsRepository, StudentsRepository>();
             services.AddTransient<IStudentsService, StudentsServices>();
             services.AddDbContext<AppDataContext>(
-                options => options.UseSqlite("Data Source=../Repositories/CoursesApi.db", 
+                options => options.UseSqlite("Data Source=../Repositories/DatabaseApi.db", 
                 b => b.MigrationsAssembly("Api")));
 
 

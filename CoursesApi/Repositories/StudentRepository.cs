@@ -14,8 +14,7 @@ namespace CoursesApi.Repositories
         {
             _db = db;
         }
-
-
+        
         public IEnumerable<StudentsDTO> GetStudents()
         {
             var students = (from c in _db.Students
