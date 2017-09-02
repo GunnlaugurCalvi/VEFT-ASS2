@@ -57,6 +57,11 @@ namespace Api.Controllers
         {
             var retVal = _coursesService.AddCourse(course);
 
+            if(retVal.Name == null)
+            {
+                return NotFound("Course " + retVal.CourseID +" does not exist"); 
+            }
+
 
             return CreatedAtRoute("GetCourseById", new { id = retVal.ID }, retVal); // Created
         }
