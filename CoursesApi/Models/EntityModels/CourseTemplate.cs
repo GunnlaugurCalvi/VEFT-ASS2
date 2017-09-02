@@ -1,7 +1,7 @@
-namespace CoursesApi.Models.DTOModels
+namespace CoursesApi.Models.EntityModels
 {
-    public class CourseDTO
-    {
+    public class CourseTemplate
+    { 
         public int ID { get; set; }
 
         public string Name { get; set; }
@@ -9,6 +9,7 @@ namespace CoursesApi.Models.DTOModels
         public string CourseID { get; set; }
 
         public string Semester {get; set;}
+
     }
 
 }

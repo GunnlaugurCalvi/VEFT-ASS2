@@ -22,7 +22,9 @@ namespace CoursesApi.Repositories
                 select new CourseDTO
                 {
                     ID = c.ID,
-                    Name = c.Name
+                    Name = c.Name,
+                    CourseID = c.CourseID,
+                    Semester = c.Semester
 
                 }).ToList();
 

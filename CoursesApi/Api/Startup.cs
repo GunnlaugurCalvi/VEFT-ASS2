@@ -29,6 +29,8 @@ namespace Api
             services.AddMvc();
             services.AddTransient<ICoursesRepository, CoursesRepository>();
             services.AddTransient<ICoursesService, CoursesServices>();
+            services.AddTransient<IStudentsRepository, StudentsRepository>();
+            services.AddTransient<IStudentsService, StudentsServices>();
             services.AddDbContext<AppDataContext>(
                 options => options.UseSqlite("Data Source=../Repositories/CoursesApi.db", 
                 b => b.MigrationsAssembly("Api")));
