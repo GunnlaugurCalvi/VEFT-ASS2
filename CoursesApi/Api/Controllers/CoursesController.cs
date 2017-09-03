@@ -20,7 +20,13 @@ namespace Api.Controllers
             _coursesService = coursesService;
         }
         
-        // GET api/courses
+        
+        /// <summary>
+        /// GET api/courses 
+        /// Gets all the courses that is this semester 
+        /// in the database
+        /// </summary>
+        /// <returns> Courses </returns>
         [HttpGet("")]
         public IActionResult GetCourses()
         {
@@ -29,7 +35,14 @@ namespace Api.Controllers
             return Ok(courses);
         }
         
-        // GET api/courses?semester={Semester:int}
+        
+        /// <summary>
+        ///  GET api/courses?semester={Semester:int}
+        ///  This class will get the courses that 
+        ///  match specific semester 
+        /// </summary>
+        /// <param name="Semester"></param>
+        /// <returns> Courses </returns>
         [HttpGet("semester={Semester:int}")]
         public IActionResult GetCoursesBySemester(int Semester)
         {
@@ -38,7 +51,17 @@ namespace Api.Controllers
             return Ok(courses);
         }
 
-         // GET api/courses/{id:int}
+         /// <summary>
+         /// This class will get the courses that 
+         /// matches specifc id and with more detailed  
+         /// object describing.
+         /// If course instance is not found it returns statuscode:404
+         /// </summary>
+         /// <param name="id"></param>
+         /// <returns>
+         /// More detailed information about specific course.
+         /// statuscode:404 if not found
+         /// </returns>
         [HttpGet("{id:int}", Name = "GetCourseById")]
         public IActionResult GetCoursesById(int id)
         {
@@ -51,7 +74,13 @@ namespace Api.Controllers
 
             return Ok(courses);
         }
-
+        /// <summary>
+        /// (BONUS CLASS)
+        /// This class allows the client of API to add an course
+        /// that is in the database 
+        /// </summary>
+        /// <param name="course"></param>
+        /// <returns>a new course for new semester</returns>
         [HttpPost("")]
         public IActionResult AddCourse([FromBody] CourseTemplate course)
         {
@@ -68,21 +97,42 @@ namespace Api.Controllers
             return CreatedAtRoute("GetCourseById", new {ID = retVal.ID}, course); // Created 201
         }
 
+        /// <summary>
+        /// This class allows the client of the API
+        /// to modify the given course instance(StartDate, EndDate)
+        /// If client tries to modify a course that is not found
+        /// it returns statuscode:404
+        /// </summary>
+        /// <param name="updatedCourse"></param>
+        /// <param name="id"></param>
+        /// <returns>
+        /// Modified Course.
+        /// if not found statuscode: 404
+        /// </returns>
         [HttpPut("{id:int}")]
         public IActionResult UpdateCourse([FromBody] Course updatedCourse, int id)
        {
-           //muna checka if updatecourse er null og id ekki sama == 400
            var course = _coursesService.GetCoursesById(id).SingleOrDefault();
            if(course == null)
            {
-               return StatusCode(404); //NATFOUND
+               return StatusCode(404); 
            }
            var upCourse = _coursesService.UpdateCourse(updatedCourse, id);
 
            return StatusCode(204);
           
        }
-
+        /// <summary>
+        /// This class should remove the specific course.
+        /// If client tries to remove a course that cannot be found
+        /// it returns statuscode: 404
+        /// </summary>
+        /// <param name="delCourse"></param>
+        /// <param name="id"></param>
+        /// <returns>
+        /// statuscode: 204 
+        /// if not than statuscode:404
+        /// </returns>
        [HttpDelete("{id:int}")]
        public IActionResult DeleteCourse(Course delCourse, int id)
        {
