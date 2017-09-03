@@ -8,6 +8,7 @@ namespace CoursesApi.Models.EntityModels
 
         public string Name { get; set; }
 
+        public int StudentCourseID  { get; set; }
     }
 
 }

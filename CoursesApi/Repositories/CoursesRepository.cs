@@ -65,7 +65,7 @@ namespace CoursesApi.Repositories
             return coursesById;
         }
 
-        public IEnumerable<CourseDTODetail> GetAllCourseNames()
+        public IEnumerable<CourseDTODetail> GetNameAndID()
         {
             var AllCourses = (from c in _db.Courses
                 select new CourseDTODetail
@@ -78,10 +78,64 @@ namespace CoursesApi.Repositories
         }
         public Course AddCourse(Course course)
         {
+            IList<Course> list = (from c in _db.Courses
+                select new Course
+                {
+                    Semester = c.Semester,
+                    CourseID = c.CourseID,
+                } ).ToList();
+
+            foreach (Course l in list)
+            {
+                if(l.CourseID == course.CourseID && l.Semester == course.Semester)
+                {
+                    course.Name = "AlreadyExists";
+                    return course;
+                }
+            }
+
             _db.Courses.Add(course);
             
             _db.SaveChanges();
+
             return course;
         }
+
+            public Course UpdateCourse(Course upCourse, int id)
+       {
+          
+          
+           List<Course> res = (from c in _db.Courses
+                               where c.ID == id
+                               select c).ToList();
+
+           foreach(var c in res)
+           {
+               c.EndDate = upCourse.EndDate;
+               c.StartDate = upCourse.StartDate;
+           }
+          
+           _db.SaveChanges();
+          
+           return upCourse;
+       }
+
+       public Course DeleteCourse(Course delCourse ,int id)
+       {
+           var rem = (from r in _db.Courses
+                           where r.ID == id
+                           select r).FirstOrDefault();
+          
+           if(rem != null)
+           {
+               _db.Courses.Remove(rem);
+               _db.SaveChanges();
+           }
+         
+           return rem;   
+       }
+
+
+
     }
 }

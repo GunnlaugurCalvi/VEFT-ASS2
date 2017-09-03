@@ -2707,11 +2707,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LAIART\\Documents\\HR\\Vefþjónustur\\Verkefni2\\VEFT-ASS2-master_modified\\VEFT-ASS2-master\\CoursesApi\\Repositories\\Repositories.csproj",
+      "projectUniqueName": "C:\\Users\\LAIART\\Documents\\HR\\Vefþjónustur\\Verkefni2\\webapi\\VEFT-ASS2\\CoursesApi\\Repositories\\Repositories.csproj",
       "projectName": "Repositories",
-      "projectPath": "C:\\Users\\LAIART\\Documents\\HR\\Vefþjónustur\\Verkefni2\\VEFT-ASS2-master_modified\\VEFT-ASS2-master\\CoursesApi\\Repositories\\Repositories.csproj",
+      "projectPath": "C:\\Users\\LAIART\\Documents\\HR\\Vefþjónustur\\Verkefni2\\webapi\\VEFT-ASS2\\CoursesApi\\Repositories\\Repositories.csproj",
       "packagesPath": "C:\\Users\\LAIART\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LAIART\\Documents\\HR\\Vefþjónustur\\Verkefni2\\VEFT-ASS2-master_modified\\VEFT-ASS2-master\\CoursesApi\\Repositories\\obj\\",
+      "outputPath": "C:\\Users\\LAIART\\Documents\\HR\\Vefþjónustur\\Verkefni2\\webapi\\VEFT-ASS2\\CoursesApi\\Repositories\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -2730,8 +2730,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\LAIART\\Documents\\HR\\Vefþjónustur\\Verkefni2\\VEFT-ASS2-master_modified\\VEFT-ASS2-master\\CoursesApi\\Models\\Models.csproj": {
-              "projectPath": "C:\\Users\\LAIART\\Documents\\HR\\Vefþjónustur\\Verkefni2\\VEFT-ASS2-master_modified\\VEFT-ASS2-master\\CoursesApi\\Models\\Models.csproj"
+            "C:\\Users\\LAIART\\Documents\\HR\\Vefþjónustur\\Verkefni2\\webapi\\VEFT-ASS2\\CoursesApi\\Models\\Models.csproj": {
+              "projectPath": "C:\\Users\\LAIART\\Documents\\HR\\Vefþjónustur\\Verkefni2\\webapi\\VEFT-ASS2\\CoursesApi\\Models\\Models.csproj"
             }
           }
         }

@@ -18,13 +18,28 @@ namespace CoursesApi.Repositories
         public IEnumerable<StudentsDTO> GetStudents()
         {
             var students = (from c in _db.Students
+                .Distinct()
                 select new StudentsDTO
                 {
-                    ID = c.ID,
                     SSN = c.SSN,
                     Name = c.Name
 
                 }).ToList();
+
+            return students;
+        }
+
+        public IEnumerable<StudentsDTO> GetStudentsInCourse(int id)
+        {
+            var students = (from s in _db.Students
+                            join C in _db.Courses on s.StudentCourseID equals C.ID
+                            where s.StudentCourseID == id
+                            select new StudentsDTO
+                            {
+                             SSN = s.SSN,
+                             Name = s.Name
+
+                            }).ToList();
 
             return students;
         }

@@ -183,11 +183,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LAIART\\Documents\\HR\\Vefþjónustur\\Verkefni2\\VEFT-ASS2-master_modified\\VEFT-ASS2-master\\CoursesApi\\Models\\Models.csproj",
+      "projectUniqueName": "C:\\Users\\LAIART\\Documents\\HR\\Vefþjónustur\\Verkefni2\\webapi\\VEFT-ASS2\\CoursesApi\\Models\\Models.csproj",
       "projectName": "Models",
-      "projectPath": "C:\\Users\\LAIART\\Documents\\HR\\Vefþjónustur\\Verkefni2\\VEFT-ASS2-master_modified\\VEFT-ASS2-master\\CoursesApi\\Models\\Models.csproj",
+      "projectPath": "C:\\Users\\LAIART\\Documents\\HR\\Vefþjónustur\\Verkefni2\\webapi\\VEFT-ASS2\\CoursesApi\\Models\\Models.csproj",
       "packagesPath": "C:\\Users\\LAIART\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LAIART\\Documents\\HR\\Vefþjónustur\\Verkefni2\\VEFT-ASS2-master_modified\\VEFT-ASS2-master\\CoursesApi\\Models\\obj\\",
+      "outputPath": "C:\\Users\\LAIART\\Documents\\HR\\Vefþjónustur\\Verkefni2\\webapi\\VEFT-ASS2\\CoursesApi\\Models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

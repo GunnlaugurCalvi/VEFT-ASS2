@@ -6,6 +6,7 @@ namespace CoursesApi.Repositories
     public interface IStudentsRepository
     {
         IEnumerable<StudentsDTO> GetStudents();
+        IEnumerable<StudentsDTO> GetStudentsInCourse(int id);
     }
 
 }

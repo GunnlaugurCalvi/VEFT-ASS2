@@ -36,9 +36,9 @@ namespace CoursesApi.Services
             return coursesById;
         }
 
-       public string getAllCourseName(string CourseID)
+       public string GetNameAndID(string CourseID)
        {
-           IEnumerable<CourseDTODetail> list = _repo.GetAllCourseNames();
+           IEnumerable<CourseDTODetail> list = _repo.GetNameAndID();
 
            foreach (CourseDTODetail C in list)
            {
@@ -47,22 +47,47 @@ namespace CoursesApi.Services
                    return C.Name;
                }
            }
-           return null;
+
+            return null;
+
        }
 
        public Course AddCourse(CourseTemplate course)
        {
            Course newCourse = new Course();
 
-           newCourse.Name = getAllCourseName(course.CourseID);
+           newCourse.Name = GetNameAndID(course.CourseID);
            newCourse.CourseID = course.CourseID;
            newCourse.Semester = course.Semester;
            newCourse.StartDate = course.StartDate;
            newCourse.EndDate = course.EndDate;
 
-            var retVal = _repo.AddCourse(newCourse);
+            Course retVal = _repo.AddCourse(newCourse);
 
            return retVal;
        }
+
+        // public int CountStudents(string CourseID)
+        // {
+        //     int count = _repo.CountStudents(CourseID);
+
+        //     return count;
+        // }
+
+               public Course UpdateCourse(Course Course, int id)
+       {
+          
+           var upCourse = _repo.UpdateCourse(Course, id);
+
+           return upCourse;
+       }
+       public Course DeleteCourse(Course delCourse, int id)
+       {
+           var rem = _repo.DeleteCourse(delCourse, id);
+
+           return delCourse;
+       }
+
+
     }
 }

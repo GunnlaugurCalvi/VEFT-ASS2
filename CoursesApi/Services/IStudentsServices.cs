@@ -5,6 +5,7 @@ namespace CoursesApi.Services
 {
     public interface IStudentsService
     {
-        IEnumerable<StudentsDTO> GetStudents();
+        List<string> GetStudents();
+        IEnumerable<StudentsDTO> GetStudentsInCourse(int id);
     }
 }
