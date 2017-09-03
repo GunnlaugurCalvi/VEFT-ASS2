@@ -130,6 +130,20 @@ namespace CoursesApi.Repositories
            return rem;   
        }
 
+       int CountStudents(string CourseID)
+       {
+            var rem = (from r in _db.Courses
+                           where r.ID == id
+                           select r).FirstOrDefault();
+          
+           if(rem != null)
+           {
+
+               return null;
+           }
+         
+       }
+
 
 
     }

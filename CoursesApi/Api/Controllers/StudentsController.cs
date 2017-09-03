@@ -21,7 +21,11 @@ namespace Api.Controllers
         {
             _studentsService = studentsService;
         }
-        // GET api/courses/students
+
+        /// <summary>
+        /// GET api/courses/students
+        /// Gets unique registered students
+        /// </summary>
         [HttpGet("[controller]")]
         public IActionResult GetStudents()
         {
@@ -35,7 +39,11 @@ namespace Api.Controllers
             return Ok(students);
         }
 
-
+        /// <summary>
+        /// Gets students in specific course
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>SSN and name</returns>
         [HttpGet("{id:int}/students", Name="GetStudentsInCourse")]
         public IActionResult GetStudentsInCourse(int id)
         {
@@ -50,6 +58,12 @@ namespace Api.Controllers
             return Ok(studentsInCourse);
         }
 
+        /// <summary>
+        /// Adds a student to specific course
+        /// </summary>
+        /// <param name="student"></param>
+        /// <param name="id"></param>
+        /// <returns>SSN and name</returns>
         [HttpPost("{id:int}/students")]
         public IActionResult AddStudent([FromBody] StudentTemplate student, int id)
         {

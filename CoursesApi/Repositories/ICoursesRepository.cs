@@ -13,7 +13,7 @@ namespace CoursesApi.Repositories
         Course AddCourse(Course course);
         IEnumerable<CourseDTODetail> GetNameAndID();
         
-        //int CountStudents(string CourseID);
+        int CountStudents(string CourseID);
         Course UpdateCourse(Course upCourse, int id);
         Course DeleteCourse(Course delCourse, int id);
 
