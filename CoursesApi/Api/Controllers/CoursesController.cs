@@ -38,7 +38,7 @@ namespace Api.Controllers
             return Ok(courses);
         }
 
-         // GET api/courses?semester={Semester:int}
+         // GET api/courses/{id:int}
         [HttpGet("{id:int}", Name = "GetCourseById")]
         public IActionResult GetCoursesById(int id)
         {
@@ -55,15 +55,50 @@ namespace Api.Controllers
         [HttpPost("")]
         public IActionResult AddCourse([FromBody] CourseTemplate course)
         {
-            var retVal = _coursesService.AddCourse(course);
+            Course retVal = _coursesService.AddCourse(course);
 
             if(retVal.Name == null)
             {
-                return NotFound("Course " + retVal.CourseID +" does not exist"); 
+                return NotFound("Course " + retVal.CourseID +" does not exist"); // NotFound 404 ; 
+            }else if( retVal.Name == "AlreadyExists")
+            {
+                return StatusCode(409); // Dublicate 409
             }
 
-
-            return CreatedAtRoute("GetCourseById", new { id = retVal.ID }, retVal); // Created
+            return CreatedAtRoute("GetCourseById", new {ID = retVal.ID}, course); // Created 201
         }
+
+        [HttpPut("{id:int}")]
+        public IActionResult UpdateCourse([FromBody] Course updatedCourse, int id)
+       {
+           //muna checka if updatecourse er null og id ekki sama == 400
+           var course = _coursesService.GetCoursesById(id).SingleOrDefault();
+           if(course == null)
+           {
+               return StatusCode(404); //NATFOUND
+           }
+           var upCourse = _coursesService.UpdateCourse(updatedCourse, id);
+
+           return StatusCode(204);
+          
+       }
+
+       [HttpDelete("{id:int}")]
+       public IActionResult DeleteCourse(Course delCourse, int id)
+       {
+           var course = _coursesService.GetCoursesById(id).SingleOrDefault();
+
+           if(course == null)
+           {
+               return StatusCode(404);
+           }
+
+           _coursesService.DeleteCourse(delCourse, id);
+
+           return StatusCode(204);
+       }
+
+
+        
     }
 }

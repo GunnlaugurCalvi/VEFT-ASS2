@@ -8,7 +8,7 @@ using CoursesApi.Repositories;
 
 namespace Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/courses")]
     public class StudentsController : Controller
     {
 
@@ -18,13 +18,33 @@ namespace Api.Controllers
         {
             _studentsService = studentsService;
         }
-        // GET api/students
-        [HttpGet]
+        // GET api/courses/students
+        [HttpGet("[controller]")]
         public IActionResult GetStudents()
         {
             var students = _studentsService.GetStudents();
 
+            if(students == null)
+            {
+                return NotFound("Database Empty"); // NotFound 404
+            }
+
             return Ok(students);
+        }
+
+
+        [HttpGet("{id:int}/[controller]")]
+        public IActionResult GetStudentsInCourse(int id)
+        {
+            
+            var studentsInCourse = _studentsService.GetStudentsInCourse(id);
+
+            if(studentsInCourse == null)
+            {
+                return NotFound("No student found"); // NotFound 404 ;
+            }
+
+            return Ok(studentsInCourse);
         }
     }
 }
