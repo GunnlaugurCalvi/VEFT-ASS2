@@ -11,12 +11,15 @@ namespace CoursesApi.Repositories
     {
         private readonly AppDataContext _db;
 
-
         public CoursesRepository(AppDataContext db)
         {
             _db = db;
         }
 
+        /// <summary>
+        /// Gets all courses from database
+        /// </summary>
+        /// <returns>CourseDTO Model</returns>
         public IEnumerable<CourseDTO> GetCourses()
         {
             var courses = (from c in _db.Courses
@@ -30,11 +33,16 @@ namespace CoursesApi.Repositories
             return courses;
         }
 
-        public IEnumerable<CourseDTOSemester> GetCoursesBySemester(string semester)
+        /// <summary>
+        /// Get all courses on a given semester from database
+        /// </summary>
+        /// <param name="Semester"></param>
+        /// <returns>CourseIDOSemester</returns>
+        public IEnumerable<CourseDTOSemester> GetCoursesBySemester(string Semester)
         {
 
             var coursesBySemester = (from c in _db.Courses
-                where c.Semester == semester
+                where c.Semester == Semester
                 select new CourseDTOSemester
                 {
                     CourseID = c.CourseID
@@ -43,6 +51,12 @@ namespace CoursesApi.Repositories
             return coursesBySemester;
         }
 
+        /// <summary>
+        /// Gets detailed information about a course
+        /// on a given id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public IEnumerable<CourseDTODetail> GetCoursesById(int id)
         {
 
@@ -60,6 +74,11 @@ namespace CoursesApi.Repositories
             return coursesById;
         }
 
+        /// <summary>
+        /// Gets all course names and courseID's from database
+        /// Only used by the service layer
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<CourseDTODetail> GetNameAndID()
         {
             var AllCourses = (from c in _db.Courses
@@ -71,6 +90,12 @@ namespace CoursesApi.Repositories
 
             return AllCourses;
         }
+
+        /// <summary>
+        /// Adds a course to the database
+        /// </summary>
+        /// <param name="course"></param>
+        /// <returns>Course</returns>
         public bool AddCourse(Course course)
         {
             IList<Course> list = (from c in _db.Courses
@@ -80,6 +105,8 @@ namespace CoursesApi.Repositories
                     CourseID = c.CourseID,
                 } ).ToList();
 
+            // Checking if course already exists
+            // If so returning false
             foreach (Course l in list)
             {
                 if(l.CourseID == course.CourseID && l.Semester == course.Semester)
@@ -97,6 +124,12 @@ namespace CoursesApi.Repositories
             return true;
         }
 
+        /// <summary>
+        /// Updates a specified course
+        /// </summary>
+        /// <param name="upCourse"></param>
+        /// <param name="id"></param>
+        /// <returns>Course back to service layer</returns>
         public Course UpdateCourse(Course upCourse, int id)
        {
           
@@ -116,6 +149,12 @@ namespace CoursesApi.Repositories
            return upCourse;
        }
 
+        /// <summary>
+        /// Deletes a specified course
+        /// </summary>
+        /// <param name="delCourse"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
        public Course DeleteCourse(Course delCourse ,int id)
        {
            var rem = (from r in _db.Courses
@@ -131,6 +170,12 @@ namespace CoursesApi.Repositories
            return rem;   
        }
 
+        /// <summary>
+        /// Counts students in a specified course
+        /// Only used by service layer
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Number of students</returns>
        int CountStudents(int id)
        {
             var count = (from s in _db.Students
