@@ -53,8 +53,8 @@ namespace CoursesApi.Repositories
                     //ID = c.ID,
                     Name = c.Name,
                     CourseID = c.CourseID,
-                    Semester = c.Semester
-
+                    Semester = c.Semester,
+                    StudentCount = CountStudents(id)
                 } ).ToList();
 
             return coursesById;
@@ -130,21 +130,13 @@ namespace CoursesApi.Repositories
            return rem;   
        }
 
-       int CountStudents(string CourseID)
+       int CountStudents(int id)
        {
-            var rem = (from r in _db.Courses
-                           where r.ID == id
-                           select r).FirstOrDefault();
-          
-           if(rem != null)
-           {
-
-               return null;
-           }
-         
-       }
-
-
-
+            var count = (from s in _db.Students
+                            join C in _db.Courses on s.StudentCourseID equals C.ID
+                            where C.ID == id
+                            select s ).Count();
+            return count;
+        }
     }
 }

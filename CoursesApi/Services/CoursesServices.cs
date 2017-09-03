@@ -33,6 +33,7 @@ namespace CoursesApi.Services
         public IEnumerable<CourseDTODetail> GetCoursesById(int id)
         {
             var coursesById = _repo.GetCoursesById(id);
+
             return coursesById;
         }
 
@@ -65,13 +66,6 @@ namespace CoursesApi.Services
             Course retVal = _repo.AddCourse(newCourse);
 
             return retVal;
-        }
-
-        public int CountStudents(string CourseID)
-        {
-            int count = _repo.CountStudents(CourseID);
-
-            return count;
         }
 
         public Course UpdateCourse(Course Course, int id)

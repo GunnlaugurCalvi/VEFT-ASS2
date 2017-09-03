@@ -35,12 +35,6 @@ namespace CoursesApi.Services
         {
             var studentsInCourse = _repo.GetStudentsInCourse(id);
 
-            // List<string> retValue =  new List<string>();            
-
-            // foreach(StudentsDTO s in studentsInCourse)
-            // {
-            //     retValue.Add(s.Name);
-            // }
             return studentsInCourse;
 
         }
