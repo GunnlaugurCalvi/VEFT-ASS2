@@ -11,7 +11,7 @@ namespace CoursesApi.Services
         List<string> GetStudents();
         IEnumerable<StudentsDTO> GetStudentsInCourse(int id);
 
-        Student AddStudent(StudentTemplate newStudent, int id);
+        StudentTemplate AddStudent(StudentTemplate newStudent, int id);
         
     }
 }

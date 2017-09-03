@@ -39,7 +39,7 @@ namespace CoursesApi.Services
 
         }
 
-        public Student AddStudent(StudentTemplate newStudent, int id)
+        public StudentTemplate AddStudent(StudentTemplate newStudent, int id)
         {
             Student stud = new Student();
 
@@ -48,8 +48,11 @@ namespace CoursesApi.Services
             stud.StudentCourseID = id;
 
             var newStud = _repo.AddStudent(stud);
-
-            return newStud;
+            
+            StudentTemplate retVal = new StudentTemplate();
+            retVal.SSN = newStud.SSN;
+            retVal.Name = newStud.Name; 
+            return retVal;
         }
     }
 }

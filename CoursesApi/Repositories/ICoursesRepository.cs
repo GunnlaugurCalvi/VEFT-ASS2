@@ -12,11 +12,9 @@ namespace CoursesApi.Repositories
         IEnumerable<CourseDTODetail> GetCoursesById(int id);
         Course AddCourse(Course course);
         IEnumerable<CourseDTODetail> GetNameAndID();
+
         Course UpdateCourse(Course upCourse, int id);
         Course DeleteCourse(Course delCourse, int id);
-
-
-
     }
 
 }
