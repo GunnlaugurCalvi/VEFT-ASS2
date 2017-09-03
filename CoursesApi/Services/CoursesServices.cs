@@ -24,7 +24,7 @@ namespace CoursesApi.Services
         }
 
 
-        public IEnumerable<CourseDTOSemester> GetCoursesBySemester(int semester)
+        public IEnumerable<CourseDTOSemester> GetCoursesBySemester(string semester)
         {
             var coursesBySemester = _repo.GetCoursesBySemester(semester);
             return coursesBySemester;

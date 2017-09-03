@@ -6,7 +6,7 @@ namespace CoursesApi.Models.viewModels
     {
         public string CourseID {get; set;}
 
-        public int Semester {get; set;}
+        public string Semester {get; set;}
 
         public DateTime StartDate {get; set;}
 

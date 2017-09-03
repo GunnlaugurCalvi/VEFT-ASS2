@@ -23,10 +23,11 @@ namespace Api.Controllers
         }
 
         /// <summary>
+        /// (BONUS CLASS)
         /// GET api/courses/students
-        /// Gets unique registered students
+        /// Gets all unique registered students
         /// </summary>
-        [HttpGet("[controller]")]
+        [HttpGet("students")]
         public IActionResult GetStudents()
         {
             var students = _studentsService.GetStudents();
@@ -40,6 +41,7 @@ namespace Api.Controllers
         }
 
         /// <summary>
+        /// GET api/courses/{id:int}/students
         /// Gets students in specific course
         /// </summary>
         /// <param name="id"></param>

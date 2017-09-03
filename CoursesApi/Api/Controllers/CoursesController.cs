@@ -37,16 +37,16 @@ namespace Api.Controllers
         
         
         /// <summary>
-        ///  GET api/courses?semester={Semester:int}
+        ///  GET api/courses/semester={Semester:string}
         ///  This class will get the courses that 
         ///  match specific semester 
         /// </summary>
         /// <param name="Semester"></param>
         /// <returns> Courses </returns>
-        [HttpGet("semester={Semester:int}")]
-        public IActionResult GetCoursesBySemester(int Semester)
+        [HttpGet("semester={semester}")]
+        public IActionResult GetCoursesBySemester( string semester)
         {
-            var courses = _coursesService.GetCoursesBySemester(Semester);
+            var courses = _coursesService.GetCoursesBySemester(semester);
 
             return Ok(courses);
         }

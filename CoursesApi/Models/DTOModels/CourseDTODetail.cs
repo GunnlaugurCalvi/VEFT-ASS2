@@ -6,7 +6,7 @@ namespace CoursesApi.Models.DTOModels
 
         public string CourseID { get; set; }
 
-        public int Semester {get; set;}
+        public string Semester {get; set;}
 
         public int StudentCount {get ; set;}
     }

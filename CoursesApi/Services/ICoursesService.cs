@@ -8,7 +8,7 @@ namespace CoursesApi.Services
     public interface ICoursesService
     {
         IEnumerable<CourseDTO> GetCourses();
-        IEnumerable<CourseDTOSemester> GetCoursesBySemester(int semester);
+        IEnumerable<CourseDTOSemester> GetCoursesBySemester(string semester);
         IEnumerable<CourseDTODetail> GetCoursesById(int id);
         bool AddCourse(CourseTemplate course);
         CourseTemplate UpdateCourse(Course upCourse, int id);

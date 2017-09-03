@@ -8,7 +8,7 @@ namespace CoursesApi.Repositories
     public interface ICoursesRepository
     {
         IEnumerable<CourseDTO> GetCourses();
-        IEnumerable<CourseDTOSemester> GetCoursesBySemester(int semester);
+        IEnumerable<CourseDTOSemester> GetCoursesBySemester(string semester);
         IEnumerable<CourseDTODetail> GetCoursesById(int id);
         bool AddCourse(Course course);
         IEnumerable<CourseDTODetail> GetNameAndID();
