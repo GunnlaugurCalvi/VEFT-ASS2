@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using CoursesApi.Models.DTOModels;
 using System.Linq;
 using System;
+using CoursesApi.Models.EntityModels;
+using CoursesApi.Models.viewModels;
 
 namespace CoursesApi.Repositories
 {
@@ -42,6 +44,13 @@ namespace CoursesApi.Repositories
                             }).ToList();
 
             return students;
+        }
+
+        public Student AddStudent(Student newStudent)
+        {
+            _db.Students.Add(newStudent);
+            _db.SaveChanges();
+            return newStudent;
         }
     }
 }

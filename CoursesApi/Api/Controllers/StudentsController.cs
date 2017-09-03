@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CoursesApi.Services;
 using CoursesApi.Repositories;
+using CoursesApi.Models.EntityModels;
+using CoursesApi.Models.DTOModels;
+using CoursesApi.Models.viewModels;
 
 namespace Api.Controllers
 {
@@ -33,7 +36,7 @@ namespace Api.Controllers
         }
 
 
-        [HttpGet("{id:int}/[controller]")]
+        [HttpGet("{id:int}/students", Name="GetStudentsInCourse")]
         public IActionResult GetStudentsInCourse(int id)
         {
             
@@ -45,6 +48,14 @@ namespace Api.Controllers
             }
 
             return Ok(studentsInCourse);
+        }
+
+        [HttpPost("{id:int}/students")]
+        public IActionResult AddStudent([FromBody] StudentTemplate student, int id)
+        {
+            var added = _studentsService.AddStudent(student, id);
+            
+            return Created("GetStudentsInCourse", added);
         }
     }
 }

@@ -10,7 +10,7 @@ using CoursesApi.Models.viewModels;
 
 namespace Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/courses")]
     public class CoursesController : Controller
     {
         private readonly ICoursesService _coursesService;

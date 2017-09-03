@@ -74,13 +74,13 @@ namespace CoursesApi.Services
         //     return count;
         // }
 
-               public Course UpdateCourse(Course Course, int id)
-       {
-          
-           var upCourse = _repo.UpdateCourse(Course, id);
+        public Course UpdateCourse(Course Course, int id)
+        {
 
-           return upCourse;
-       }
+            var upCourse = _repo.UpdateCourse(Course, id);
+
+            return upCourse;
+        }
        public Course DeleteCourse(Course delCourse, int id)
        {
            var rem = _repo.DeleteCourse(delCourse, id);

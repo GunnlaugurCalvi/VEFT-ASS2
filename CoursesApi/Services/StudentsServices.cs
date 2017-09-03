@@ -1,5 +1,8 @@
 using System.Collections.Generic;
+using System.Linq;
 using CoursesApi.Models.DTOModels;
+using CoursesApi.Models.EntityModels;
+using CoursesApi.Models.viewModels;
 using CoursesApi.Repositories;
 
 
@@ -40,6 +43,19 @@ namespace CoursesApi.Services
             // }
             return studentsInCourse;
 
+        }
+
+        public Student AddStudent(StudentTemplate newStudent, int id)
+        {
+            Student stud = new Student();
+
+            stud.SSN = newStudent.SSN;
+            stud.Name = newStudent.Name;
+            stud.StudentCourseID = id;
+
+            var newStud = _repo.AddStudent(stud);
+
+            return newStud;
         }
     }
 }

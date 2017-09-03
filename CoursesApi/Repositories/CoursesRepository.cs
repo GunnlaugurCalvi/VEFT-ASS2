@@ -20,14 +20,12 @@ namespace CoursesApi.Repositories
         public IEnumerable<CourseDTO> GetCourses()
         {
             var courses = (from c in _db.Courses
-                select new CourseDTO
-                {
-                    //ID = c.ID,
-                    Name = c.Name
-                    //CourseID = c.CourseID,
-                    //Semester = c.Semester
+                        where c.Semester == 20173
+                        select new CourseDTO
+                        {
+                            Name = c.Name
 
-                }).ToList();
+                        }).ToList();
 
             return courses;
         }
@@ -39,11 +37,8 @@ namespace CoursesApi.Repositories
                 where c.Semester == Semester
                 select new CourseDTOSemester
                 {
-                    //ID = c.ID,
-                    //Name = c.Name,
-                    CourseID = c.CourseID,
-                    //Semester = c.Semester     
-
+                    CourseID = c.CourseID
+                 
                 } ).ToList();
             return coursesBySemester;
         }
@@ -101,7 +96,7 @@ namespace CoursesApi.Repositories
             return course;
         }
 
-            public Course UpdateCourse(Course upCourse, int id)
+        public Course UpdateCourse(Course upCourse, int id)
        {
           
           
