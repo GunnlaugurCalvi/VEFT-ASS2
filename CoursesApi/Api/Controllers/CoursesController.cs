@@ -44,7 +44,7 @@ namespace Api.Controllers
         /// <param name="Semester"></param>
         /// <returns> Courses </returns>
         [HttpGet("semester={semester}")]
-        public IActionResult GetCoursesBySemester( string semester)
+        public IActionResult GetCoursesBySemester(string semester)
         {
             var courses = _coursesService.GetCoursesBySemester(semester);
 

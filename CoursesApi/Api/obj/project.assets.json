@@ -7597,7 +7597,7 @@
       ]
     },
     "Remotion.Linq/2.1.1": {
-      "sha512": "+HdfStb1gsTbtLzDiHuw+JPgQCfrSWddDZlHS/5Jr974BuNyiddjpF8BUUaCWBYDPrZiXfVAekXw0IMpZUKD6g==",
+      "sha512": "IJn0BqkvwEDpP+2qjvci7n4/a9f7DhKESLWb2/uG4xQh3rTkGTBUz69bI4IivCoKkTFAqjXxYDZw2K/npohjsw==",
       "type": "package",
       "path": "remotion.linq/2.1.1",
       "files": [
@@ -9887,7 +9887,7 @@
       ]
     },
     "System.Net.Security/4.3.0": {
-      "sha512": "SJ9JohyG7pMm12cMy4wVxGYWjo54rr4Os4Q5qP5+4ue7CK7VABiimGXy2dfTaTJhBoAlriouaifeGjTIzWsCEQ==",
+      "sha512": "IgJKNfALqw7JRWp5LMQ5SWHNKvXVz094U6wNE3c1i8bOkMQvgBL+MMQuNt3xl9Qg9iWpj3lFxPZEY6XHmROjMQ==",
       "type": "package",
       "path": "system.net.security/4.3.0",
       "files": [
@@ -12590,23 +12590,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\LAIART\\.nuget\\packages\\": {},
+    "C:\\Users\\gulli\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LAIART\\Documents\\HR\\Vefþjónustur\\Verkefni2\\webapi\\taka3\\VEFT-ASS2\\CoursesApi\\Api\\Api.csproj",
+      "projectUniqueName": "C:\\Users\\gulli\\Documents\\Vefthjonustur\\VEFT-ASS2\\CoursesApi\\api\\Api.csproj",
       "projectName": "Api",
-      "projectPath": "C:\\Users\\LAIART\\Documents\\HR\\Vefþjónustur\\Verkefni2\\webapi\\taka3\\VEFT-ASS2\\CoursesApi\\Api\\Api.csproj",
-      "packagesPath": "C:\\Users\\LAIART\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LAIART\\Documents\\HR\\Vefþjónustur\\Verkefni2\\webapi\\taka3\\VEFT-ASS2\\CoursesApi\\Api\\obj\\",
+      "projectPath": "C:\\Users\\gulli\\Documents\\Vefthjonustur\\VEFT-ASS2\\CoursesApi\\api\\Api.csproj",
+      "packagesPath": "C:\\Users\\gulli\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\gulli\\Documents\\Vefthjonustur\\VEFT-ASS2\\CoursesApi\\api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\LAIART\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\gulli\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12619,14 +12619,14 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\LAIART\\Documents\\HR\\Vefþjónustur\\Verkefni2\\webapi\\taka3\\VEFT-ASS2\\CoursesApi\\Models\\Models.csproj": {
-              "projectPath": "C:\\Users\\LAIART\\Documents\\HR\\Vefþjónustur\\Verkefni2\\webapi\\taka3\\VEFT-ASS2\\CoursesApi\\Models\\Models.csproj"
+            "C:\\Users\\gulli\\Documents\\Vefthjonustur\\VEFT-ASS2\\CoursesApi\\Models\\Models.csproj": {
+              "projectPath": "C:\\Users\\gulli\\Documents\\Vefthjonustur\\VEFT-ASS2\\CoursesApi\\Models\\Models.csproj"
             },
-            "C:\\Users\\LAIART\\Documents\\HR\\Vefþjónustur\\Verkefni2\\webapi\\taka3\\VEFT-ASS2\\CoursesApi\\Repositories\\Repositories.csproj": {
-              "projectPath": "C:\\Users\\LAIART\\Documents\\HR\\Vefþjónustur\\Verkefni2\\webapi\\taka3\\VEFT-ASS2\\CoursesApi\\Repositories\\Repositories.csproj"
+            "C:\\Users\\gulli\\Documents\\Vefthjonustur\\VEFT-ASS2\\CoursesApi\\Repositories\\Repositories.csproj": {
+              "projectPath": "C:\\Users\\gulli\\Documents\\Vefthjonustur\\VEFT-ASS2\\CoursesApi\\Repositories\\Repositories.csproj"
             },
-            "C:\\Users\\LAIART\\Documents\\HR\\Vefþjónustur\\Verkefni2\\webapi\\taka3\\VEFT-ASS2\\CoursesApi\\Services\\Services.csproj": {
-              "projectPath": "C:\\Users\\LAIART\\Documents\\HR\\Vefþjónustur\\Verkefni2\\webapi\\taka3\\VEFT-ASS2\\CoursesApi\\Services\\Services.csproj"
+            "C:\\Users\\gulli\\Documents\\Vefthjonustur\\VEFT-ASS2\\CoursesApi\\Services\\Services.csproj": {
+              "projectPath": "C:\\Users\\gulli\\Documents\\Vefthjonustur\\VEFT-ASS2\\CoursesApi\\Services\\Services.csproj"
             }
           }
         }

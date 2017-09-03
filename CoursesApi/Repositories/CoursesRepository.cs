@@ -23,12 +23,12 @@ namespace CoursesApi.Repositories
         public IEnumerable<CourseDTO> GetCourses()
         {
             var courses = (from c in _db.Courses
-                        where c.Semester == "20173"
-                        select new CourseDTO
-                        {
-                            Name = c.Name
+                            where c.Semester == "20173"
+                            select new CourseDTO
+                            {
+                                Name = c.Name
 
-                        }).ToList();
+                            }).ToList();
 
             return courses;
         }
@@ -38,11 +38,11 @@ namespace CoursesApi.Repositories
         /// </summary>
         /// <param name="Semester"></param>
         /// <returns>CourseIDOSemester</returns>
-        public IEnumerable<CourseDTOSemester> GetCoursesBySemester(string Semester)
+        public IEnumerable<CourseDTOSemester> GetCoursesBySemester(string semester)
         {
 
             var coursesBySemester = (from c in _db.Courses
-                where c.Semester == Semester
+                where c.Semester == semester
                 select new CourseDTOSemester
                 {
                     CourseID = c.CourseID
