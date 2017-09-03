@@ -71,7 +71,7 @@ namespace CoursesApi.Repositories
 
             return AllCourses;
         }
-        public Course AddCourse(Course course)
+        public bool AddCourse(Course course)
         {
             IList<Course> list = (from c in _db.Courses
                 select new Course
@@ -84,16 +84,17 @@ namespace CoursesApi.Repositories
             {
                 if(l.CourseID == course.CourseID && l.Semester == course.Semester)
                 {
-                    course.Name = "AlreadyExists";
-                    return course;
+                   
+                    return false;
                 }
             }
+
 
             _db.Courses.Add(course);
             
             _db.SaveChanges();
 
-            return course;
+            return true;
         }
 
         public Course UpdateCourse(Course upCourse, int id)

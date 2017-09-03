@@ -10,9 +10,9 @@ namespace CoursesApi.Services
         IEnumerable<CourseDTO> GetCourses();
         IEnumerable<CourseDTOSemester> GetCoursesBySemester(int semester);
         IEnumerable<CourseDTODetail> GetCoursesById(int id);
-        Course AddCourse(CourseTemplate course);
-        Course UpdateCourse(Course upCourse, int id);
-        Course DeleteCourse(Course delCourse, int id);
+        bool AddCourse(CourseTemplate course);
+        CourseTemplate UpdateCourse(Course upCourse, int id);
+        CourseTemplate DeleteCourse(Course delCourse, int id);
 
 
 

@@ -84,17 +84,14 @@ namespace Api.Controllers
         [HttpPost("")]
         public IActionResult AddCourse([FromBody] CourseTemplate course)
         {
-            Course retVal = _coursesService.AddCourse(course);
+            bool retVal = _coursesService.AddCourse(course);
 
-            if(retVal.Name == null)
+            if(retVal == false)
             {
-                return NotFound("Course " + retVal.CourseID +" does not exist"); // NotFound 404 ; 
-            }else if( retVal.Name == "AlreadyExists")
-            {
-                return StatusCode(409); // Dublicate 409
+                return StatusCode(400); // Bad request
             }
 
-            return CreatedAtRoute("GetCourseById", new {ID = retVal.ID}, course); // Created 201
+            return Created("GetCourseById", course); // Created 201
         }
 
         /// <summary>

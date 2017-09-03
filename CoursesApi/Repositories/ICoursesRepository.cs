@@ -10,7 +10,7 @@ namespace CoursesApi.Repositories
         IEnumerable<CourseDTO> GetCourses();
         IEnumerable<CourseDTOSemester> GetCoursesBySemester(int semester);
         IEnumerable<CourseDTODetail> GetCoursesById(int id);
-        Course AddCourse(Course course);
+        bool AddCourse(Course course);
         IEnumerable<CourseDTODetail> GetNameAndID();
 
         Course UpdateCourse(Course upCourse, int id);

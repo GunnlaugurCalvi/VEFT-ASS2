@@ -53,33 +53,53 @@ namespace CoursesApi.Services
 
        }
 
-        public Course AddCourse(CourseTemplate course)
+        public bool AddCourse(CourseTemplate course)
         {
             Course newCourse = new Course();
-
+            if(GetNameAndID(course.CourseID) == null)
+            {
+                return false;
+            }
             newCourse.Name = GetNameAndID(course.CourseID);
             newCourse.CourseID = course.CourseID;
             newCourse.Semester = course.Semester;
             newCourse.StartDate = course.StartDate;
             newCourse.EndDate = course.EndDate;
 
-            Course retVal = _repo.AddCourse(newCourse);
+            bool retVal = _repo.AddCourse(newCourse);
+
 
             return retVal;
         }
 
-        public Course UpdateCourse(Course Course, int id)
+        public CourseTemplate UpdateCourse(Course course, int id)
         {
+            
           
-           var upCourse = _repo.UpdateCourse(Course, id);
+            var upCourse = _repo.UpdateCourse(course, id);
 
-           return upCourse;
+            CourseTemplate updated = new CourseTemplate();
+
+            updated.CourseID = upCourse.CourseID;
+            updated.Semester = upCourse.Semester;
+            updated.StartDate = upCourse.StartDate;
+            updated.EndDate = upCourse.EndDate;
+
+           return updated;
         }
-        public Course DeleteCourse(Course delCourse, int id)
+        public CourseTemplate DeleteCourse(Course delCourse, int id)
         {
             var rem = _repo.DeleteCourse(delCourse, id);
 
-            return delCourse;
+            CourseTemplate deleted = new CourseTemplate();
+
+            deleted.CourseID = rem.CourseID;
+            deleted.Semester = rem.Semester;
+            deleted.StartDate = rem.StartDate;
+            deleted.EndDate = rem.EndDate;
+
+
+            return deleted;
         }
 
 
